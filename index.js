@@ -63,7 +63,6 @@ bot.on("message", async message => {
     message.channel.send(message.content.substring(2, message.content.length));
   }
 
-});
 
 });
 
