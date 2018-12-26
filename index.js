@@ -42,10 +42,8 @@ bot.on("message", async message => {
     message.channel.send("[**]play/nani/stop");
   }
   if(message.content ===  `${prefix}Help`) {
-    Object.keys(hash).forEach(function(key) {
-      value = hash[key];
-      message.channel.send(value);
-      }
+    message.channel.send("Help");
+  }
   if(message.content ===  `${prefix}stop`) {
     console.log("left channel");
     message.guild.voiceConnection.disconnect();
@@ -61,7 +59,9 @@ bot.on("message", async message => {
     message.channel.send(v);
     hash[k] = v;
   }
-
+  if(message.content.startsWith(`${prefix}`) ) {
+    message.channel.send(message.content.substring(2, message.content.length));
+  }
 
 });
 
