@@ -52,7 +52,7 @@ bot.on("message", async message => {
   if(message.content ===  `${prefix}nani`) {
     message.channel.send(songurl);
   }
-  if(message.content.startsWith(`${prefix}add`) && (message.member.permissions.has('ADMINISTRATOR'))) {
+  if(message.content.startsWith(`${prefix}add`) && message.member.permissions.has('ADMINISTRATOR')) {
     var k = message.content.match(/'(\w+)'/)[1];
 
     var s = message.content.replace(message.content.match(/'(\w*)'/)[1],'');
