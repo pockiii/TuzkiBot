@@ -59,7 +59,7 @@ bot.on("message", async message => {
     message.channel.send(v);
     hash[k] = v;
   }
-  if(message.content.startsWith(`${prefix}`) && hash.has(message.content.substring(2, message.content.length)) {
+  if(message.content.startsWith(`${prefix}`) && hash.has(message.content.substring(2, message.content.length))) {
     message.channel.send("hi");
   }
 
