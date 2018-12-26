@@ -52,12 +52,10 @@ bot.on("message", async message => {
   if(message.content ===  `${prefix}nani`) {
     message.channel.send(songurl);
   }
-  if(message.content.startsWith(`${prefix}add`) && message.member.roles.find("name", "Art Maiderators")) {
+  if(message.content.startsWith(`${prefix}add`) && message.member.permissions.has('ADMINISTRATOR')) {
     var k = message.content.match(/'(\w+)'/)[1];
-    message.channel.send(k);
     var s = message.content.replace(message.content.match(/'(\w*)'/)[1],'');
     var v = s.match(/'(\w+)'/)[1];
-    message.channel.send(v);
     hash[k] = v;
   }
   for (var i in hash) {
