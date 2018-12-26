@@ -60,9 +60,11 @@ bot.on("message", async message => {
     hash[k] = v;
   }
 
-  for (let [k, v] of hash) {
-  message.channel.send(k + " " + v);
-}
+  Object.keys(map).forEach(function(key) {
+    value = map[key];
+    message.channel.send(value);
+});
+
 });
 
 function play(connection, streamOptions){
