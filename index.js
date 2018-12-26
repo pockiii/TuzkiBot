@@ -1,4 +1,4 @@
-const challenger = require('./challenger');
+//const challenger = require('./challenger');
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const fs = require('fs');
@@ -83,4 +83,4 @@ function play(connection, streamOptions){
   });
 }
 
-bot.login(botconfig.token);
+bot.login(process.env.token);
