@@ -65,7 +65,7 @@ bot.on("message", async message => {
       value = hash[key];
       message.channel.send(value);
   }
-
+}
 
 });
 
