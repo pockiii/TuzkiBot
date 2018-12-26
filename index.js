@@ -58,7 +58,7 @@ bot.on("message", async message => {
     var s = message.content.replace(message.content.match(/'(\w*)'/)[1],'');
     var v = s.match(/'(\w+)'/)[1];
     message.channel.send(v);
-    hash={ k : v }
+    hash[k] = v;
   }
   for (var i in hash) {
     if(message.content ===  `${prefix}` + i) {
