@@ -54,7 +54,7 @@ bot.on("message", async message => {
   if(message.content.startsWith(`${prefix}add`) && message.member.roles.find("name", "Art Maiderators")) {
     var k = message.content.match(/'(\w+)'/)[1];
     message.channel.send(k);
-    var v = message.content.match(/'(\w+)'/)[3];
+    var v = message.content.match(/'(\w+)'/)[2];
     message.channel.send(v);
   }
 });
