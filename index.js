@@ -64,7 +64,7 @@ bot.on("message", async message => {
     Object.keys(hash).forEach(function(key) {
       value = hash[key];
       message.channel.send(value);
-  }
+  });
 }
 
 });
