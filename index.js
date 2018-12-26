@@ -54,14 +54,11 @@ bot.on("message", async message => {
   }
   if(message.content.startsWith(`${prefix}add`) && message.member.roles.find("name", "Art Maiderators")) {
     var k = message.content.match(/'(\w+)'/g)[0].slice(1, -1);
-    message.channel.send(k);
     var v = message.content.match(/'(\w+)'/g)[1].slice(1, -1);
-    message.channel.send(v);
     hash[k] = v;
   }
   if(message.content.startsWith(`${prefix}`) && message.content.substring(2, message.content.length) in hash) {
     message.channel.send(hash[message.content.substring(2, message.content.length)]);
-    message.channel.send("hi");
   }
 
 
