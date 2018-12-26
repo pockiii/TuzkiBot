@@ -51,7 +51,7 @@ bot.on("message", async message => {
   if(message.content ===  `${prefix}nani`) {
     message.channel.send(songurl);
   }
-  if(message.content.startsWith ===  `${prefix}add` && message.member.roles.find("name", "Art Maiderators")) {
+  if(message.content.startsWith(`${prefix}add`) && message.member.roles.find("name", "Art Maiderators")) {
     message.channel.send("Yes");
     var str = message.content.substr(message.content.indexOf('('), message.content.indexOf(')'))
     message.channel.send(str);
