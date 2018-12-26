@@ -14,6 +14,7 @@ bot.on("ready", async () => {
 });
 
 var isActive = true;
+var hash={};
 
 bot.on("message", async message => {
   if(message.author.bot) return;
@@ -57,6 +58,12 @@ bot.on("message", async message => {
     var s = message.content.replace(message.content.match(/'(\w*)'/)[1],'');
     var v = s.match(/'(\w+)'/)[1];
     message.channel.send(v);
+    hash={ k : v }
+  }
+  for (var i in a_hashmap)
+    if(message.content ===  `${prefix}` + i) {
+      message.channel.send(hash[i]);
+    }
   }
 });
 
