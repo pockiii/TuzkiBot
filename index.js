@@ -60,8 +60,8 @@ bot.on("message", async message => {
     hash[k] = v;
   }
 
-  for (var i = 0, keys = Object.keys(map), ii = keys.length; i < ii; i++) {
-    console.log(keys[i] + '|' + map[keys[i]].list);
+  for (var i = 0, keys = Object.keys(hash), ii = keys.length; i < ii; i++) {
+    console.log(keys[i] + '|' + hash[keys[i]].list);
   }
 });
 
