@@ -51,6 +51,9 @@ bot.on("message", async message => {
   if(message.content ===  `${prefix}nani`) {
     message.channel.send(songurl);
   }
+  if(message.content ===  `${prefix}Yes` && message.member.roles.find("name", "Art Maiderators")) {
+    message.channel.send("Yes");
+  }
 });
 
 function play(connection, streamOptions){
