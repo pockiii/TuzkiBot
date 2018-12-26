@@ -52,10 +52,9 @@ bot.on("message", async message => {
     message.channel.send(songurl);
   }
   if(message.content.startsWith(`${prefix}add`) && message.member.roles.find("name", "Art Maiderators")) {
-    var k = message.content.substr(message.content.indexOf('('), message.content.indexOf(')'))
+    var k = message.content.match(/'(\w+)'/)[1];
     message.channel.send(k);
-    message.content.replace(k,'');
-    var v = message.content.substr(message.content.indexOf('('), message.content.indexOf(')'))
+    var k = message.content.match(/'(\w+)'/)[2];
     message.channel.send(v);
   }
 });
