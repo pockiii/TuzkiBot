@@ -57,7 +57,7 @@ bot.on("message", async message => {
     message.channel.send(k);
     var v = message.content.match(/'(\w+)'/g)[1];
     message.channel.send(v);
-    hash[k] = v;
+    hash.put(k, v);
   }
 
   for (var i = 0, keys = Object.keys(hash), ii = keys.length; i < ii; i++) {
