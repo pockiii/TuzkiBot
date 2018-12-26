@@ -64,7 +64,7 @@ bot.on("message", async message => {
   if(message.content ===  `${prefix}list`) {
     Object.keys(hash).forEach(function(key) {
       value = hash[key];
-      message.channel.send(value);
+      message.channel.send(key + "|" + value);
   });
 }
 
