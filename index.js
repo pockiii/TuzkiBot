@@ -53,9 +53,9 @@ bot.on("message", async message => {
     message.channel.send(songurl);
   }
   if(message.content.startsWith(`${prefix}add`) && message.member.roles.find("name", "Art Maiderators")) {
-    var k = message.content.match(/'(\w+)'/)[1];
+    var k = message.content.match(/'(\w+)'/g)[1];
     message.channel.send(k);
-    var v = message.content.match(/'(\w+)'/)[3];
+    var v = message.content.match(/'(\w+)'/g)[2];
     message.channel.send(v);
     hash[k] = v;
   }
