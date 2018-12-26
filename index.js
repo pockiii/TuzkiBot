@@ -52,11 +52,9 @@ bot.on("message", async message => {
   if(message.content ===  `${prefix}nani`) {
     message.channel.send(songurl);
   }
-  if(message.content.startsWith(`${prefix}add`) && (message.member.permissions.has('BAN_MEMBERS'))) {
+  if(message.content.startsWith(`${prefix}add`) && (message.member.permissions.has('ADMINISTRATOR'))) {
     var k = message.content.match(/'(\w+)'/)[1];
-    if(k === 'Help' || k === 'nani' || k === 'stop' || k === 'play'){
-      k = "oithoiwehfoicjdspfjepo";
-    }
+
     var s = message.content.replace(message.content.match(/'(\w*)'/)[1],'');
     var v = s.match(/'(\w+)'/)[1];
     hash[k] = v;
