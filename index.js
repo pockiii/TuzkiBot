@@ -59,10 +59,9 @@ bot.on("message", async message => {
     message.channel.send(v);
     hash[k] = v;
   }
-  for (var i in hash) {
-    if(message.content ===  `${prefix}` + i) {
-      message.channel.send(hash[i]);
-    }
+
+  for (var i = 0, keys = Object.keys(map), ii = keys.length; i < ii; i++) {
+    console.log(keys[i] + '|' + map[keys[i]].list);
   }
 });
 
