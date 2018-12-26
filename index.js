@@ -60,7 +60,7 @@ bot.on("message", async message => {
     message.channel.send(v);
     hash={ k : v }
   }
-  for (var i in a_hashmap)
+  for (var i in a_hashmap) {
     if(message.content ===  `${prefix}` + i) {
       message.channel.send(hash[i]);
     }
