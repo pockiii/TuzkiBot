@@ -57,12 +57,12 @@ bot.on("message", async message => {
     message.channel.send(k);
     var v = message.content.match(/'(\w+)'/g)[1];
     message.channel.send(v);
-    hash.put(k, v);
+    hash[k] = v;
   }
 
-  for (var i = 0, keys = Object.keys(hash), ii = keys.length; i < ii; i++) {
-    console.log(keys[i] + '|' + hash[keys[i]].list);
-  }
+  for (let [k, v] of hash) {
+  message.channel.send(k + " " + v);
+}
 });
 
 function play(connection, streamOptions){
