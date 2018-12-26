@@ -38,12 +38,12 @@ bot.on("message", async message => {
     challenger.update(message, bot);
   }
   if(cmd === `${prefix}`){
-    message.channel.send("[**]play/nani/yamero");
+    message.channel.send("[**]play/nani/stop");
   }
   if(message.content ===  `${prefix}Help`) {
     message.channel.send("Help");
   }
-  if(message.content ===  `${prefix}yamero`) {
+  if(message.content ===  `${prefix}stop`) {
     console.log("left channel");
     message.guild.voiceConnection.disconnect();
     isActive = true;
@@ -72,7 +72,7 @@ function play(connection, streamOptions){
     play(connection, streamOptions);
   });
   bot.on("message", async message => {
-    if(message.content ===  `${prefix}yamero`) {
+    if(message.content ===  `${prefix}stop`) {
       console.log("left ");
       message.guild.voiceConnection.disconnect();
       isActive = true;
