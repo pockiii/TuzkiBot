@@ -57,7 +57,7 @@ bot.on("message", async message => {
     var v = message.content.match(/'[\w\s.!?\\-]+'/g)[1].slice(1, -1);
     hash[k] = v;
   }
-  if(message.content.startsWith(``) && message.content.substring(2, message.content.length) in hash) {
+  if(message.content.startsWith(``) && message.content.substring(0, message.content.length) in hash) {
     message.channel.send(hash[message.content.substring(2, message.content.length)]);
   }
   if(message.content ===  `${prefix}list`) {
