@@ -19,7 +19,7 @@ var hash={};
 bot.on("message", async message => {
   if(message.author.bot) return;
   let prefix = botconfig.prefix;
-  let cmd = message.content;
+  let cmd = message.content.toLowerCase();
 
   if(cmd === `${prefix}play` && isActive){
     if(message.member.voiceChannel){
@@ -41,7 +41,7 @@ bot.on("message", async message => {
   if(cmd === `${prefix}`){
     message.channel.send("[**]play/song/stop");
   }
-  if(message.content ===  `${prefix}Help`) {
+  if(message.content ===  `${prefix}help`) {
     message.channel.send("Help");
   }
   if(message.content ===  `${prefix}stop`) {
