@@ -39,7 +39,7 @@ bot.on("message", async message => {
     challenger.update(message, bot);
   }
   if(cmd === `${prefix}`){
-    message.channel.send("[**]play/nani/stop");
+    message.channel.send("[**]play/song/stop");
   }
   if(message.content ===  `${prefix}Help`) {
     message.channel.send("Help");
@@ -49,7 +49,7 @@ bot.on("message", async message => {
     message.guild.voiceConnection.disconnect();
     isActive = true;
   }
-  if(message.content ===  `${prefix}nani`) {
+  if(message.content ===  `${prefix}song`) {
     message.channel.send(songurl);
   }
   if(message.content.startsWith(`${prefix}add`) && message.member.roles.find("name", "Divine Regulars")) {
@@ -57,7 +57,7 @@ bot.on("message", async message => {
     var v = message.content.match(/'[\w\s.!?\\-]+'/g)[1].slice(1, -1);
     hash[k] = v;
   }
-  if(message.content.startsWith(`${prefix}`) && message.content.substring(2, message.content.length) in hash) {
+  if(message.content.startsWith(``) && message.content.substring(2, message.content.length) in hash) {
     message.channel.send(hash[message.content.substring(2, message.content.length)]);
   }
   if(message.content ===  `${prefix}list`) {
