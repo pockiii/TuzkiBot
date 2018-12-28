@@ -59,12 +59,10 @@ bot.on("message", async message => {
   }
   if(message.content ===  `${prefix}super add`) {
     message.channel.send("I am Tam");
-    bot.on("message", async message => {
       var lines = message.content.split('\n');
-      for(var i = 0;i < lines.length;i++){
+      for(var i = 1;i < lines.length;i++){
           hash[i.split("|")[0]] = i.split("|")[1];
       }
-    });
   }
   if(message.content.startsWith(`${prefix}add`) && message.member.roles.find("name", "Divine Regulars")) {
     var k = message.content.match(/'[\w\s.!?\\-]+'/g)[0].slice(1, -1);
