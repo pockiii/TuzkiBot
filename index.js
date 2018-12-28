@@ -54,7 +54,7 @@ bot.on("message", async message => {
   if(message.content ===  `${prefix}song`) {
     message.channel.send(songurl);
   }
-  if(message.content ===  `${prefix}t`) {
+  if(message.content.includes(`tuzki`)) {
     tuzki.update(message, bot);
   }
   if(message.content.startsWith(`${prefix}super add`)) {

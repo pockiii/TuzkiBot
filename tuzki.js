@@ -1,4 +1,4 @@
-const tu = [
+var tu = [
 'https://media1.tenor.com/images/0ca7c15a15aa1a0a57fb0c482a2c220f/tenor.gif',
 'https://media1.tenor.com/images/c6470330f1919cee92f015e255356154/tenor.gif',
 'https://media1.tenor.com/images/d8706a3e0db7e2f1f8c6b64f248d2564/tenor.gif',
@@ -14,7 +14,7 @@ const tu = [
 var update = function update(message, bot){
   if(message.content === `${prefix}super tuzki`){
       tu.forEach(function(item, index, array) {
-        message.channel.send(`${message.author}`, {
+        message.channel.send(``, {
           file: item
         });
       });
