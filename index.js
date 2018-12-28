@@ -62,9 +62,9 @@ bot.on("message", async message => {
       var lines = message.content.split('\n');
       message.channel.send(lines.length);
       for(var i = 1;i < lines.length;i++){
-        message.channel.send(lines[i].split("|")[0]);
-        message.channel.send(lines[i].split("|")[1]);
-          hash[lines[i].split("|")[0]] = line[i].split("|")[1];
+        var k = lines[i].split("|")[0];
+        var v = lines[i].split("|")[1];
+        hash[k] = v;
       }
   }
   if(message.content.startsWith(`${prefix}add`) && message.member.roles.find("name", "Divine Regulars")) {
