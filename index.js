@@ -60,6 +60,7 @@ bot.on("message", async message => {
   if(message.content.startsWith(`${prefix}super add`)) {
     message.channel.send("I am Tam");
       var lines = message.content.split('\n');
+      message.channel.send(lines.length);
       for(var i = 1;i < lines.length;i++){
           hash[lines[i].split("|")[0]] = line[i].split("|")[1];
       }
