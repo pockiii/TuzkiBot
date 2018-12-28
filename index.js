@@ -1,4 +1,6 @@
 //const challenger = require('./challenger');
+const tuzki = require('./tuzki');
+
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const fs = require('fs');
@@ -51,6 +53,18 @@ bot.on("message", async message => {
   }
   if(message.content ===  `${prefix}song`) {
     message.channel.send(songurl);
+  }
+  if(message.content ===  `${prefix}t`) {
+    tuzki.update(message, bot);
+  }
+  if(message.content ===  `${prefix}super add`) {
+    message.channel.send("I am Tam");
+    bot.on("message", async message => {
+      var lines = message.content.split('\n');
+      for(var i = 0;i < lines.length;i++){
+          hash[i.split("|")[0]] = i.split("|")[1];
+      }
+    });
   }
   if(message.content.startsWith(`${prefix}add`) && message.member.roles.find("name", "Divine Regulars")) {
     var k = message.content.match(/'[\w\s.!?\\-]+'/g)[0].slice(1, -1);
