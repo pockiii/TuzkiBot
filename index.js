@@ -57,7 +57,7 @@ bot.on("message", async message => {
   if(message.content ===  `${prefix}t`) {
     tuzki.update(message, bot);
   }
-  if(message.content ===  `${prefix}super add`) {
+  if(message.content.startsWith(`${prefix}super add`)) {
     message.channel.send("I am Tam");
       var lines = message.content.split('\n');
       for(var i = 1;i < lines.length;i++){
