@@ -61,7 +61,7 @@ bot.on("message", async message => {
     message.channel.send("I am Tam");
       var lines = message.content.split('\n');
       for(var i = 1;i < lines.length;i++){
-          hash[i.split("|")[0]] = i.split("|")[1];
+          hash[lines[i].split("|")[0]] = line[i].split("|")[1];
       }
   }
   if(message.content.startsWith(`${prefix}add`) && message.member.roles.find("name", "Divine Regulars")) {
