@@ -12,7 +12,7 @@ var tu = [
 ]
 
 var update = function update(message, bot){
-  if(message.content === `${prefix}super tuzki`){
+  if(message.content === `${prefix}1`){
       tu.forEach(function(item, index, array) {
         message.channel.send(``, {
           file: item
