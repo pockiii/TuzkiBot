@@ -44,7 +44,7 @@ bot.on("message", async message => {
   if(message.content ===  `${prefix}status`) {
     message.channel.send("up");
   }
-  if(cmd.includes(`@Tuzki`)){
+  if(message.mentions.members.first() === `@Tuzki#6942 `){
     message.channel.send("ping");
   }
 
