@@ -18,8 +18,9 @@ bot.on("message", async message => {
   if(message.author.bot) return;
   let prefix = botconfig.prefix;
   let cmd = message.content.toLowerCase();
+  let guild = message.guild.id;
 
-  if(cmd === `${prefix}test`){
+  if(cmd === `${prefix}list`){
     var url = '';
     for(var i = 1; i <= 88; i++){
       if(i <= 9) {
@@ -27,16 +28,33 @@ bot.on("message", async message => {
       } else {
         url = 'http://yoursmiles.org/ksmile/tuzki/k54' + i + '.gif';
       }
-      message.channel.send(``, {
+      await message.channel.send(i, {
         file: url
       });
     }
   }
-  if(message.content ===  `${prefix}help`) {
-    message.channel.send("Help");
+  if(message.content.startsWith(`${prefix}`) && message.content.match(`${prefix}[0-9]|[1-9][0-9]`)) {
+    message.delete();
+    if(message.content.split(" ")[1] > 88) {
+      message.channel.send("Array out of bounds");
+    } else {
+      foo(message.content.split(" ")[1], ``, message);
+    }
   }
-
+  if(message.content ===  `${prefix}status`) {
+    message.channel.send("up");
+  }
 
 });
 
+function foo(i, str, message) {
+  if(i <= 9) {
+    url = 'http://yoursmiles.org/ksmile/tuzki/k540' + i + '.gif';
+  } else {
+    url = 'http://yoursmiles.org/ksmile/tuzki/k54' + i + '.gif';
+  }
+   message.channel.send(message.mentions.members.first(), {
+    file: url
+  });
+}
 bot.login(botconfig.token);
